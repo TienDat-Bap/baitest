@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wedding</title>
+    <!-- -------------Link css-----------------  -->
+    <link rel="stylesheet" href="wedding.css">
+    <!----------------- link gg fonts-----------  -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="highlight">
+            <span class="highlight-text">Here some highlight in package</span>
+        </div>  
+        <!-- ----------end highlight---------- -->
+        <div class="products">
+            <div class="img__left">
+                <img src="img/Rectangle 67.png" alt="" class="img__left--top">
+                <img src="img/Rectangle 69.png" alt="" class="img__left--bottom">
+            </div>
+            <!----------------- end img__left--------------- -->
+            <div class="text">
+                <div class="Planing">
+                    <h2>Planing & Design</h2>
+                    <div class="tabs">
+                        <button class="tab-btn btn-left active" onclick="openTab(event, 'budget')">Budget planning</button>
+                        <button class="tab-btn" onclick="openTab(event, 'bridal')">Bridal Salon Selection</button>
+                        <button class="tab-btn" onclick="openTab(event, 'bridesmaid')">Bridesmaid Dress Selection</button>
+                        <button class="tab-btn btn-right" onclick="openTab(event, 'cake')">Wedding Cake</button>
+                    </div>
+                    
+                    <div id="budget" class="tab-content active">
+                        <p>The Design is the imagination, creativity and inspiration that makes your event unique. We work closely with you to sleuth out your style and then use that insight to develop every aesthetic component of your event from stationery and lighting to flowers and furniture.</p>
+                    </div>
+                    <div id="bridal" class="tab-content">
+                        <p>Find the perfect bridal salon that fits your dream wedding look...</p>
+                    </div>
+                    <div id="bridesmaid" class="tab-content">
+                        <p>Choose beautiful bridesmaid dresses that complement your theme...</p>
+                    </div>
+                    <div id="cake" class="tab-content">
+                        <p>Discover the best wedding cake designs and flavors...</p>
+                    </div>
+                    <div class="borders"></div>
+                </div>
+                <!------------------end Planding  -->
+                <div class="Planing">
+                    <h2>Floral & Decor</h2>
+                    <div class="tabs">
+                        <button class="tab-btn btn-left active" onclick="openTab(event, 'Floral')">Floral</button>
+                        <button class="tab-btn" onclick="openTab(event, 'Decor')">Decor selection</button>
+                        <button class="tab-btn" onclick="openTab(event, 'Hair')">Hair & makeup</button>
+                        <button class="tab-btn btn-right" onclick="openTab(event, 'Lighting')">Lighting & Sound</button>
+                    </div>
+                    
+                    <div id="Floral" class="tab-content active">
+                        <p>From maintaining your budget and managing RSVPs to curating the ideal creative team and negotiating vendor contracts, we’re here to labor over logistics so you don’t have to. You’ll have a clear understanding of what’s coming next throughout the process—without ever being inundated with unnecessary information, options that aren’t a right fit, or tedious to-dos.</p>
+                    </div>
+                    <div id="Decor" class="tab-content">
+                        <p>Find the perfect bridal salon that fits your dream wedding look...</p>
+                    </div>
+                    <div id="Hair" class="tab-content">
+                        <p>Choose beautiful bridesmaid dresses that complement your theme...</p>
+                    </div>
+                    <div id="Lighting" class="tab-content">
+                        <p>Discover the best wedding cake designs and flavors...</p>
+                    </div>
+                    <div class="borders"></div>
+                </div>
+                <!-- --------------end Floral----------- -->
+                <div class="Planing paddingbottom">
+                    <h2>Paperie & Branding</h2>
+                    <div class="tabs">
+                        <button class="tab-btn btn-left active" onclick="openTab(event, 'Invitations')">Invitations</button>
+                        <button class="tab-btn" onclick="openTab(event, 'Venue')">Venue selection & management</button>
+                        <button class="tab-btn btn-right" onclick="openTab(event, 'Stationery')">Stationery</button>
+                    </div>
+                    
+                    <div id="Invitations" class="tab-content active">
+                        <p>We’ll collaborate to develop an aesthetic that speaks to your soul and stems from your story. From creating design boards and sourcing artisanal items—to keeping vendors on the same page and perfecting every last touchpoint across your entire affair— we’re here to deliver a cohesive collection of meaningful moments that, together, create the wedding of your wildest dreams.</p>
+                    </div>
+                    <div id="Venue" class="tab-content">
+                        <p>Find the perfect bridal salon that fits your dream wedding look...</p>
+                    </div>
+                    <div id="Stationery" class="tab-content">
+                        <p>Choose beautiful bridesmaid dresses that complement your theme...</p>
+                    </div>
+                    <!-- <div class="borders"></div> -->
+                </div>
+                <!-- --------------end Floral----------- -->
+            </div>
+            <!-- ------------------- end text---------------- -->
+            <div class="img__right">
+                <img src="img/Rectangle 68.png" alt="" class="img__right--top">
+                <img src="img/Rectangle 70.png" alt="" class="img__right--bottom">
+            </div>
+            <!-- ---------------- end  img__right---------->
+        </div>      
+    </div>
+    <script>
+        function openTab(event, tabId) {
+            let parentPlaning = event.currentTarget.closest(".Planing");
+
+            parentPlaning.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            parentPlaning.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            parentPlaning.querySelector(`#${tabId}`).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+
+    </script>
+</body>
+</html>
