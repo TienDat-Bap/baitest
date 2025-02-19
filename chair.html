@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chair</title>
+    <!-- ----------Link css--------------- -->
+    <link rel="stylesheet" href="chair.css">
+    <!-- ------------ link CDN icon--------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- ------------- link gg fonts----- -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="products">
+            <div class="product__information">
+                <p class="CONSTRUCTION">CONSTRUCTION</p>
+                <div class="title">
+                    <h2>The perfect accent </h2>
+                    <h2>chair for any room</h2>
+                </div>
+                <div class="Cushion paddings">
+                    <div class="Cushion__title clicks">
+                        <p>Cushion</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <p class="Cushion__content content">The Thayer's seat cushion features a core of high-resiliency foam wrapped with a layer of microfiber for a structured, supportive sit.</p>
+                </div>
+                <!-- --------end Cushion------ -->
+                <div class="Upholstery paddings items ">
+                    <div class="Upholstery__title  clicks title__items">
+                        <p>Upholstery</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <p class="Cushion__content content">The Thayer's seat cushion features a core of high-resiliency foam wrapped with a layer of microfiber for a structured, supportive sit.</p>
+                </div>
+                <!-- ---------end Upholstery----- -->
+                 <div class="Frame paddings items">
+                    <div class="Frame__title clicks title__items">
+                        <p>Frame</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <p class="Cushion__content content">The Thayer's seat cushion features a core of high-resiliency foam wrapped with a layer of microfiber for a structured, supportive sit.</p>
+                 </div>
+                 <!-- ---------end Frame--------- -->
+                <div class="Finish paddings items">
+                    <div class="Finish__title clicks title__items">
+                        <p>Finish</p>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <p class="Cushion__content content">The Thayer's seat cushion features a core of high-resiliency foam wrapped with a layer of microfiber for a structured, supportive sit.</p>
+                </div>
+                <!-- -----------end Finish-------- -->
+            </div>
+            <!-- -------------end product__information -->
+            <div class="product__img">
+                <img src="img/Rectangle 3005.jpg" class="doubleseat" alt="ghế đôi">
+                <img src="img/Rectangle 3004.jpg" class="chair" alt="ghế">
+            </div>
+            <!----------------end product__img----------- -->
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll(".clicks").forEach(i => {
+            i.addEventListener("click", () => {
+                const accordionItem = i.parentElement;
+                const content = accordionItem.querySelector(".content");
+                const icon = i.querySelector("i");
+
+                const isOpen = content.style.display === "block";
+                document.querySelectorAll(".content").forEach(c => c.style.display = "none");
+                document.querySelectorAll("i").forEach(i => i.classList.replace("fa-minus", "fa-plus"));
+                document.querySelectorAll(".paddings").forEach(p => p.style.paddingBottom = "8px");
+                document.querySelectorAll(".fa-plus").forEach(icon => icon.style.margin = "2px 3.5px 4.5px 0px");
+                if (!isOpen) {
+                    content.style.display = "block";
+                    icon.classList.replace("fa-plus", "fa-minus");
+                    if (accordionItem.classList.contains("paddings")) {
+                        accordionItem.style.paddingBottom = "0px";
+                    }
+                    if (icon.classList.contains("fa-minus")) {
+                        icon.style.margin = "0.5px 3.5px 6px 0px";
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
